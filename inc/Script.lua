@@ -342,7 +342,7 @@ if not msg.Admin then return "  ⋆  ⇽ هذا الامر يخص :\n الادم
 return GetListAdmin(msg) 
 end
 
-if MsgText[1] == "منشن" then
+if MsgText[1] == "منشن"or MsgText=="تاك" then
 if not msg.Admin then return " ⋆  ⇽ هذا الامر يخص : الادمن ⇽ المدير ⇽ المنشئ ⇽ المطور فقط ⋆ . \n" end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub('-100',''), offset_ = 0,limit_ = 100
 },function(ta,taha)
@@ -358,12 +358,12 @@ send_msg(msg.chat_id_,t,msg.id_)
 end,nil)
 end
 
-if (MsgText[1] == "منشن للحلوين" and is_JoinChannel(msg)) then 
+if (MsgText[1] == "منشن للحلوين"or MsgText=="تاك للمنشئيين" and is_JoinChannel(msg)) then 
 if not msg.Admin then return " ⋆  ⇽ هذا الامر يخص : الادمن ⇽ المدير ⇽ المنشئ ⇽ المطور فقط \n⋆" end
 return ownerlist(msg) .. GetListAdmin(msg) .. whitelist(msg)
 end
 
-if MsgText[1] == "منشن للكل" then 
+if MsgText[1] == "منشن للكل"or MsgText=="تاك للكل" then 
 if not msg.Admin then return "  ⋆  ⇽ هذا الامر يخص :\n الادمن ⇽ المدير ⇽ المنشئ ⇽ المطور فقط \n⋆ " end
 return ownerlist(msg) .. GetListAdmin(msg) .. whitelist(msg)
 end
